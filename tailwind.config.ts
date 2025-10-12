@@ -8,10 +8,17 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        'primary-text': '#F3E9DC',
+        'accent-text': '#D9A05B',
+        'button-gold': '#B8860B',
+        'button-hover': '#A4751D',
+      },
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        'brown-gradient': 'linear-gradient(135deg, #3E2C20, #5C4033, #A67856)',
+      },
+      fontFamily: {
+        logo: ['"Brush Script MT"', 'cursive'],
       },
     },
   },

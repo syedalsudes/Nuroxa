@@ -1,10 +1,15 @@
-import Image from "next/image";
 import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
+import ContactSection from "@/components/ContactSection";
+import WhyUs from "@/components/WhyUs";
 
 export default function Home() {
   return (
     <>
-    <HeroSection />
+      <HeroSection />
+      <AboutSection />
+      <ContactSection />
+      <WhyUs />
     </>
   );
 }
