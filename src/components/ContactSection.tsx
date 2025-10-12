@@ -34,7 +34,7 @@ const ContactSection = () => {
             <p className="text-[#f5e7d7]/90 text-base sm:text-lg mt-7 leading-relaxed">
               Have a question, suggestion, or need help with your order?
               Our team is here to assist you with anything you need.
-              We usually reply within 24 hours. Don't hesitate to reach out!
+              We usually reply within 24 hours. Don&#39;t hesitate to reach out!
             </p>
           </div>
 
