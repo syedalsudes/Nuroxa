@@ -1,133 +1,110 @@
 'use client';
-
 import { useState } from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
 const ContactSection = () => {
-  const [form, setForm] = useState({
+  const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
+    website: '',
     message: ''
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value
+    }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Thank you for contacting us!');
+    console.log(formData);
   };
 
   return (
-    <section className="py-20 px-6 text-primary-text bg-[#3E2C20]/90" id="contact">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-        
-        {/* Left - Info */}
-        <div className="flex flex-col h-full text-accent-text space-y-6">
-          <div>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 mt-10">
-              Contact <span className="text-button-gold">Us</span>
-            </h2>
+    <section className="w-full bg-cream py-16 px-6 md:px-20">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
 
-            <p className="text-[#f5e7d7]/90 text-base sm:text-lg mt-7 leading-relaxed">
-              Have a question, suggestion, or need help with your order?
-              Our team is here to assist you with anything you need.
-              We usually reply within 24 hours. Don&#39;t hesitate to reach out!
-            </p>
-          </div>
+        <div className="py-20">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-gold mb-6">
+            Contact Us
+          </h2>
 
-          <div className="mt-8 space-y-4 text-sm sm:text-base">
-            <p className="flex items-center gap-3">
-              <Phone className="text-button-gold w-5 h-5" />
-              +92 300 1234567
-            </p>
-            <p className="flex items-center gap-3">
-              <Mail className="text-button-gold w-5 h-5" />
-              support@nuroxa.com
-            </p>
-            <p className="flex items-center gap-3">
-              <MapPin className="text-button-gold w-5 h-5" />
-              Karachi, Pakistan
-            </p>
+          <p className="text-base md:text-lg lg:text-xl text-greyText mb-8 leading-relaxed">
+            We are committed to processing the information in order to contact you
+            and talk about your project.
+          </p>
+
+          <div className="space-y-6">
+            <div className="flex items-center">
+              <Mail className="text-gold mr-3" size={22} />
+              <p className="text-blackText">example@teamwebflow.com</p>
+            </div>
+            <div className="flex items-center">
+              <MapPin className="text-gold mr-3" size={22} />
+              <p className="text-blackText">4074 Ebert Summit Suite 375, Lake Leonardchester</p>
+            </div>
+            <div className="flex items-center">
+              <Phone className="text-gold mr-3" size={22} />
+              <p className="text-blackText">+44 123 654 7890</p>
+            </div>
           </div>
         </div>
 
-        {/* Right - Form */}
-        <form
-          onSubmit={handleSubmit}
-          className="bg-[#5C4033]/80 p-6 sm:p-8 rounded-lg shadow-lg space-y-5 w-full"
-        >
-          {/* Name */}
+        <form onSubmit={handleSubmit} className="bg-cream p-8 rounded-xl shadow-lg space-y-6">
           <div>
-            <label htmlFor="name" className="block mb-1 text-sm font-medium">
-              Name
-            </label>
             <input
               type="text"
               name="name"
-              required
-              value={form.name}
+              placeholder='Name'
+              value={formData.name}
               onChange={handleChange}
-              className="w-full p-3 rounded bg-[#f7ca90] text-black placeholder:text-[#5C4033] focus:outline-none focus:ring-2 focus:ring-button-gold"
-              placeholder="Your Name"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold"
+              required
             />
           </div>
 
-          {/* Email */}
           <div>
-            <label htmlFor="email" className="block mb-1 text-sm font-medium">
-              Email
-            </label>
             <input
               type="email"
               name="email"
-              required
-              value={form.email}
+              placeholder='you@email.com'
+              value={formData.email}
               onChange={handleChange}
-              className="w-full p-3 rounded bg-[#f7ca90] text-black placeholder:text-[#5C4033] focus:outline-none focus:ring-2 focus:ring-button-gold"
-              placeholder="you@email.com"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold"
+              required
             />
           </div>
 
-          {/* Subject */}
           <div>
-            <label htmlFor="subject" className="block mb-1 text-sm font-medium">
-              Subject
-            </label>
             <input
               type="text"
-              name="subject"
-              required
-              value={form.subject}
+              name="website"
+              placeholder='Subject'
+              value={formData.website}
               onChange={handleChange}
-              className="w-full p-3 rounded bg-[#f7ca90] text-black placeholder:text-[#5C4033] focus:outline-none focus:ring-2 focus:ring-button-gold"
-              placeholder="Subject"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold"
             />
           </div>
 
-          {/* Message */}
           <div>
-            <label htmlFor="message" className="block mb-1 text-sm font-medium">
-              Message
-            </label>
             <textarea
               name="message"
-              rows={4}
-              required
-              value={form.message}
+              placeholder='Your Message'
+              value={formData.message}
               onChange={handleChange}
-              className="w-full p-3 rounded bg-[#f7ca90] text-black placeholder:text-[#5C4033] focus:outline-none focus:ring-2 focus:ring-button-gold"
-              placeholder="Write your message here..."
-            />
+              className="w-full p-3 border border-gray-300 rounded-lg h-32 resize-none focus:outline-none focus:ring-2 focus:ring-gold"
+              required
+            ></textarea>
           </div>
 
           <button
             type="submit"
-            className="w-full py-3 bg-button-gold text-white rounded-lg hover:bg-button-hover transition duration-300"
+            className="w-full py-3 text-cream font-medium bg-hero-gradient rounded-lg hover:opacity-90 transition"
           >
-            Send Message
+            Submit
           </button>
         </form>
       </div>

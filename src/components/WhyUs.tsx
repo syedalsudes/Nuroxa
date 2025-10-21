@@ -1,60 +1,53 @@
-import { Gem, Truck, ShieldCheck, LucideIcon } from "lucide-react";
+"use client";
 
-type Feature = {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-};
+import { Clock, Diamond, ShieldCheck } from "lucide-react";
 
-const features: Feature[] = [
-  {
-    icon: Gem,
-    title: "Premium Quality",
-    description:
-      "Every product is sourced from top manufacturers, ensuring durability and exceptional craftsmanship.",
-  },
-  {
-    icon: Truck,
-    title: "Fast Dropshipping",
-    description:
-      "We offer reliable and fast dropshipping directly to your doorstep without delays.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Secure Shopping",
-    description:
-      "Enjoy a smooth and secure checkout experience every time you shop.",
-  },
-];
-
-const WhyChooseUs = () => {
+const WhyUs = () => {
   return (
-    <section className="text-[#F3E9DC] py-20 px-6" id="whyus">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold">Why Choose Nuroxa?</h2>
-          <p className="mt-4 text-lg text-[#e1d4c4]">
-            Discover what makes us stand out in the world of premium dropshipping.
-          </p>
-        </div>
+    <section className="w-full bg-cream py-24 px-6 md:px-20">
+      <div className="text-center max-w-4xl mx-auto">
+        
+        {/* Heading */}
+        <h2 className="text-4xl md:text-5xl font-bold tracking-wide text-blackText">
+          Why Choose <span className="text-gold">Nuroxa?</span>
+        </h2>
+        <p className="text-lg md:text-xl text-greyText mt-4">
+          Where craftsmanship meets legacy - designed for those who value more than time.
+        </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {features.map((item, index) => (
-            <div
-              key={index}
-              className="p-6 text-center"
-            >
-              <div className="flex justify-center mb-4">
-                <item.icon className="w-8 h-8 text-yellow-600" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2 text-yellow-500">{item.title}</h3>
-              <p className="text-sm text-[#e5dccc]">{item.description}</p>
-            </div>
-          ))}
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-20 mt-16">
+          
+          {/* Card 1 */}
+          <div className="flex flex-col items-center text-center">
+            <Clock className="w-12 h-12 text-gold" />
+            <h3 className="text-2xl font-semibold mt-4 text-blackText">Timeless Design</h3>
+            <p className="text-greyText mt-3 text-base">
+              Crafted with elegance, our designs transcend trends and generations.
+            </p>
+          </div>
+
+          {/* Card 2 */}
+          <div className="flex flex-col items-center text-center">
+            <Diamond className="w-12 h-12 text-gold" />
+            <h3 className="text-2xl font-semibold mt-4 text-blackText">Artisan Craftsmanship</h3>
+            <p className="text-greyText mt-3 text-base">
+              Each piece is meticulously shaped by master artisans for perfection.
+            </p>
+          </div>
+
+          {/* Card 3 */}
+          <div className="flex flex-col items-center text-center">
+            <ShieldCheck className="w-12 h-12 text-gold" />
+            <h3 className="text-2xl font-semibold mt-4 text-blackText">Enduring Strength</h3>
+            <p className="text-greyText mt-3 text-base">
+              Built with premium materials to withstand the journey of time.
+            </p>
+          </div>
         </div>
       </div>
     </section>
   );
 };
 
-export default WhyChooseUs;
+export default WhyUs;

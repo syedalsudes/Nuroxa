@@ -1,51 +1,55 @@
+"use client";
+
 import { Facebook, Instagram, Twitter } from "lucide-react";
-import Link from "next/link";
 
 const Footer = () => {
-    return (
-        <footer className="bg-[#3E2C20] text-[#f3e9dc] py-10 px-6">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+  return (
+    <footer className="w-full bg-blackText text-cream py-16 px-6 md:px-20">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div>
+          <h2 className="text-5xl font-logo text-gold select-none">
+            Nuroxa
+          </h2>
+          <p className="text-cream mt-4">
+            Timeless luxury crafted for those who lead.
+          </p>
+        </div>
 
-                <div>
-                    <Link href="/">
-                        <h2 className="text-5xl font-logo text-yellow-500 select-none">Nuroxa</h2>
-                    </Link>
-                    <p className="mt-2 text-sm text-[#e1d4c4]">
-                        Nuroxa is your go-to destination for premium watches delivered with ease, style, and trust.
-                    </p>
-                </div>
+        <div>
+          <h3 className="text-xl font-semibold text-gold mb-4">Explore</h3>
+          <ul className="space-y-2 text-cream">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#whyus">Why Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
 
-                <div>
-                    <h3 className="text-lg font-semibold mb-2 text-yellow-400">Quick Links</h3>
-                    <ul className="space-y-1 text-sm">
-                        <li><Link href="/">Home</Link></li>
-                        <li><Link href="/about">About</Link></li>
-                        <li><Link href="/contact">Contact</Link></li>
-                        <li><Link href="/products">Products</Link></li>
-                    </ul>
-                </div>
+        <div>
+          <h3 className="text-xl font-semibold text-gold mb-4">Support</h3>
+          <ul className="space-y-2 text-cream">
+            <li>Privacy Policy</li>
+            <li>Terms & Conditions</li>
+            <li>Customer Service</li>
+            <li>Warranty</li>
+          </ul>
+        </div>
 
-                <div>
-                    <h3 className="text-lg font-semibold mb-2 text-yellow-400">Follow Us</h3>
-                    <div className="flex gap-4">
-                        <a href="#" className="hover:text-yellow-500 transition">
-                            <Facebook className="w-5 h-5" />
-                        </a>
-                        <a href="#" className="hover:text-yellow-500 transition">
-                            <Instagram className="w-5 h-5" />
-                        </a>
-                        <a href="#" className="hover:text-yellow-500 transition">
-                            <Twitter className="w-5 h-5" />
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <div>
+          <h3 className="text-xl font-semibold text-gold mb-4">Follow Us</h3>
+          <div className="flex gap-4">
+            <Facebook className="w-6 h-6 text-gold cursor-pointer" />
+            <Instagram className="w-6 h-6 text-gold cursor-pointer" />
+            <Twitter className="w-6 h-6 text-gold cursor-pointer" />
+          </div>
+        </div>
+      </div>
 
-            <div className="mt-10 text-center text-xs text-[#d3c7b8] border-t border-[#ffffff1a] pt-4">
-                &copy; {new Date().getFullYear()} Nuroxa. All rights reserved.
-            </div>
-        </footer>
-    );
+      <div className="text-center text-cream mt-10 text-sm">
+        © {new Date().getFullYear()} Nuroxa. All Rights Reserved.
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;

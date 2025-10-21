@@ -3,30 +3,15 @@
 @tailwind utilities;
 
 
+
+/* 
 :root {
-  --color-bg-gradient-start: #3E2C20;
-  --color-bg-gradient-middle: #5C4033;
-  --color-bg-gradient-end: #A67856;
-  --color-primary-text: #F3E9DC;
-  --color-accent-text: #D9A05B;
-  --color-button-bg: #B8860B;
-  --color-button-hover: #A4751D;
-  --button-gold: #B8860B;
-  --button-hover: #A4751D;
-}
+  --color-gold: #D4AF37;
+  --color-gold-light: #F5D67B;
+  --color-bg-white: #FFFFFF;
+  --color-bg-cream: #F9F9F7;
+  --color-text-black: #0A0A0A;
+  --color-text-grey: #4A4A4A;
+} */
 
-body {
-  color: var(--color-text-primary);
-  background: linear-gradient(
-    135deg,
-    var(--color-bg-gradient-start),
-    var(--color-bg-gradient-middle),
-    var(--color-bg-gradient-end)
-  );
-  min-height: 100vh;
-  background-attachment: fixed;
-}
 
-html{
-  scroll-behavior: smooth;
-}

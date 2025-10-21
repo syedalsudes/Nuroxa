@@ -1,46 +1,48 @@
-import Image from "next/image";
+"use client";
 
+import { Star } from "lucide-react";
+import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen px-6 py-32 text-primary-text">
-
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between">
-
-        <div className="flex-1 p-6 lg:p-12 text-center lg:text-left">
-          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
-            Welcome to <br />
-            <span className="text-accent-text">Nuroxa</span> Dropshipping Store
-          </h1>
-          <p className="text-lg md:text-xl mt-4">
-            Shop the best products from anywhere, anytime!
-          </p>
-          <button className="mt-6 px-6 py-3 bg-button-gold text-white rounded-lg hover:bg-button-hover transition transform hover:scale-105">
-            Start Shopping
-          </button>
-        </div>
-
-        <div className="flex justify-center items-center flex-1 my-10 lg:my-0">
-          <Image
-            src="/herosection.svg"
-            alt="herosection"
-            className="w-52 h-52 md:w-80 md:h-80 object-contain transition-transform duration-300 ease-out hover:scale-110 select-none"
-            width={20}
-            height={20}
-          />
-        </div>
-
-        <div className="flex-1 p-6 lg:p-12 text-center lg:text-right">
-          <h2 className="text-3xl md:text-4xl font-semibold">
-            Your 24/7 <span className="text-accent-text">Online Shopping</span> Experience
-          </h2>
-          <p className="text-lg md:text-xl mt-4">
-            Explore thousands of products now.
-          </p>
-        </div>
-
+    <section className="relative bg-hero-gradient w-full min-h-[700px] flex flex-col lg:flex-row items-center justify-between px-8 lg:px-20 py-16 overflow-hidden">
+      {/* LEFT TEXT */}
+      <div className="relative z-10 text-center lg:text-left lg:w-1/3">
+        <h2 className="text-cream text-4xl sm:text-5xl font-extrabold leading-tight drop-shadow-lg">
+          Welcome to <span className="text-goldLight">Nuroxa</span>
+        </h2>
+        <p className="text-cream mt-5 text-lg sm:text-xl font-medium opacity-90">
+          Where luxury meets time.
+        </p>
+        <button className="mt-8 px-8 py-3 bg-goldLight text-blackText text-lg font-semibold rounded-full shadow-lg hover:bg-cream transition-all duration-300">
+          Explore Collection
+        </button>
       </div>
 
+      {/* CENTER WATCH IMAGE */}
+      <div className="relative z-10 lg:w-1/3 flex justify-center my-10 lg:my-0">
+        <div className="relative">
+          <div className="absolute inset-0 bg-gold/30 blur-3xl rounded-full"></div>
+          <Image
+            src="/watch.svg"
+            alt="Luxury Watch"
+            width={400}
+            height={400}
+            className="relative w-[320px] sm:w-[380px] lg:w-[420px] object-contain select-none drop-shadow-2xl"
+          />
+        </div>
+      </div>
+
+      {/* RIGHT TEXT */}
+      <div className="relative z-10 text-center lg:text-right lg:w-1/3">
+        <h2 className="text-blackText text-3xl sm:text-4xl font-bold leading-snug">
+          Redefining <span className="text-gold">Time</span>
+        </h2>
+        <p className="flex items-center justify-center lg:justify-end gap-2 mt-6 text-lg sm:text-xl font-medium text-cream">
+          <Star className="w-6 h-6 fill-gold text-gold" />
+          Crafted for Excellence
+        </p>
+      </div>
     </section>
   );
 };
