@@ -4,7 +4,7 @@ import { Clock, Diamond, ShieldCheck } from "lucide-react";
 
 const WhyUs = () => {
   return (
-    <section className="w-full bg-cream py-24 px-6 md:px-20">
+    <section id="whyus" className="w-full bg-cream py-24 px-6 md:px-20 pt-28">
       <div className="text-center max-w-4xl mx-auto">
         
         {/* Heading */}
@@ -51,3 +51,6 @@ const WhyUs = () => {
 };
 
 export default WhyUs;
+
+
+

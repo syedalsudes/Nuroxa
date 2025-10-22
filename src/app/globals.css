@@ -3,15 +3,6 @@
 @tailwind utilities;
 
 
-
-/* 
-:root {
-  --color-gold: #D4AF37;
-  --color-gold-light: #F5D67B;
-  --color-bg-white: #FFFFFF;
-  --color-bg-cream: #F9F9F7;
-  --color-text-black: #0A0A0A;
-  --color-text-grey: #4A4A4A;
-} */
-
-
+html {
+  scroll-behavior: smooth;
+}

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const AboutSection = () => {
     return (
-        <section className="w-full bg-cream py-32 px-6 md:px-20 flex flex-col lg:flex-row items-center gap-16 min-h-[800px]">
+        <section id="about" className="w-full bg-cream py-32 px-6 md:px-20 flex flex-col lg:flex-row items-center gap-16 min-h-[800px]">
 
             {/* LEFT IMAGE */}
             <div className="lg:w-1/2 flex justify-center">

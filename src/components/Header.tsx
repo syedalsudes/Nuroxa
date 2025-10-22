@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ShoppingCart, Heart, User, Search, Menu, X } from "lucide-react";
 
-const navLinks = ["About", "Products", "Why Us", "Contact"];
+const navLinks = ["About", "Products","Contact", "Why Us"];
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,14 +19,13 @@ const Navbar = () => {
 
   return (
     <>
-      {/* MAIN NAVBAR */}
-      <nav className="w-full bg-cream py-4 px-6 md:px-12 lg:px-20 flex items-center justify-between shadow-sm relative">
-        {/* Logo */}
-        <div className="text-4xl md:text-5xl font-logo text-gold cursor-pointer select-none">
-          Nuroxa
-        </div>
+      <nav className="w-full bg-cream py-4 px-6 md:px-12 lg:px-20 flex items-center justify-between shadow-sm fixed top-0 left-0 z-50">
+        <Link href='/'>
+          <div className="text-4xl md:text-5xl font-logo text-gold cursor-pointer select-none">
+            Nuroxa
+          </div>
+        </Link>
 
-        {/* Desktop Nav */}
         <ul className="hidden lg:flex gap-8 text-blackText font-medium">
           {navLinks.map((link) => (
             <li
@@ -41,9 +40,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Right Icons */}
         <div className="flex items-center gap-4">
-          {/* Search Bar (Desktop only) */}
           <div className="hidden lg:flex items-center bg-white gap-2 rounded-full shadow-inner px-3 py-1 w-[220px]">
             <Search className="w-5 h-5 text-gold" />
             <input
@@ -53,7 +50,6 @@ const Navbar = () => {
             />
           </div>
 
-          {/* Icons */}
           {width > 640 && (
             <>
               <Heart className="w-6 h-6 text-gold hover:text-blackText cursor-pointer transition-colors" />
@@ -62,7 +58,6 @@ const Navbar = () => {
             </>
           )}
 
-          {/* Hamburger */}
           <button
             className="lg:hidden text-gold focus:outline-none"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -72,17 +67,14 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* FULLSCREEN MOBILE/TABLET MENU */}
       {menuOpen && (
         <div className="fixed top-0 left-0 w-full h-screen bg-cream z-50 flex flex-col animate-slideDown">
-          {/* Close */}
           <div className="flex justify-end items-center px-6 py-5 border-b border-gold/40">
             <button onClick={() => setMenuOpen(false)}>
               <X className="w-7 h-7 text-gold" />
             </button>
           </div>
 
-          {/* Search (Tablet & Mobile) */}
           {width <= 1024 && (
             <div className="flex items-center bg-white gap-2 rounded-full shadow-inner px-4 py-2 mx-6 mt-6">
               <Search className="w-5 h-5 text-gold" />
@@ -94,7 +86,6 @@ const Navbar = () => {
             </div>
           )}
 
-          {/* Links */}
           <nav className="flex flex-col items-center justify-center flex-1 gap-8 text-lg font-medium text-blackText">
             {navLinks.map((link) => (
               <Link
@@ -107,7 +98,6 @@ const Navbar = () => {
               </Link>
             ))}
 
-            {/* Icons for small widths */}
             {width <= 640 && (
               <div className="flex gap-8 mt-8">
                 <Heart className="w-7 h-7 text-gold hover:text-blackText cursor-pointer" />
