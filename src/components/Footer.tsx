@@ -1,6 +1,6 @@
 "use client";
 
-import { Facebook, Instagram, Twitter } from "lucide-react";
+// import { Facebook, Instagram, Twitter } from "lucide-react";
 import Link from "next/link";
 
 const Footer = () => {
@@ -41,9 +41,9 @@ const Footer = () => {
         <div>
           <h3 className="text-xl font-semibold text-gold mb-4">Follow Us</h3>
           <div className="flex gap-4">
-            <Facebook className="w-6 h-6 text-gold cursor-pointer" />
+            {/* <Facebook className="w-6 h-6 text-gold cursor-pointer" />
             <Instagram className="w-6 h-6 text-gold cursor-pointer" />
-            <Twitter className="w-6 h-6 text-gold cursor-pointer" />
+            <Twitter className="w-6 h-6 text-gold cursor-pointer" /> */}
           </div>
         </div>
       </div>

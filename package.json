@@ -10,14 +10,14 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.21",
-    "firebase": "^12.4.0",
     "framer-motion": "^12.23.24",
     "gsap": "^3.13.0",
-    "lucide-react": "^0.545.0",
+    "lucide-react": "^1.17.0",
+    "mongoose": "^9.6.3",
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",
-    "three": "^0.150.0"
+    "zustand": "^5.0.14"
   },
   "devDependencies": {
     "@types/node": "^20",
