@@ -14,11 +14,10 @@ export default function CartPage() {
     setIsMounted(true);
   }, []);
 
-  if (!isMounted) return null; // Hydration fix
+  if (!isMounted) return null; 
 
-  // Calculations
   const subtotal = cart.reduce((total, item) => total + item.price * item.quantity, 0);
-  const deliveryFee = subtotal > 3000 ? 0 : 20; // Example: Free delivery over $3000
+  const deliveryFee = subtotal > 3000 ? 0 : 20;
   const total = subtotal + (subtotal > 0 ? deliveryFee : 0);
   const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
 
@@ -159,10 +158,14 @@ export default function CartPage() {
               <span className="text-2xl font-black text-amber-500">${total}</span>
             </div>
 
-            <button className="w-full bg-black text-white py-4 rounded-xl font-bold text-lg hover:bg-amber-500 hover:text-black transition-colors duration-300 shadow-md flex items-center justify-center gap-2 group">
+            {/* YAHAN BUTTON KO LINK MEIN CONVERT KIYA HAI */}
+            <Link 
+              href="/checkout" 
+              className="w-full bg-black text-white py-4 rounded-xl font-bold text-lg hover:bg-amber-500 hover:text-black transition-colors duration-300 shadow-md flex items-center justify-center gap-2 group"
+            >
               Proceed to Checkout
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </button>
+            </Link>
 
             <Link href="/" className="block text-center mt-6 text-sm font-medium text-gray-500 hover:text-amber-600 transition">
               Continue Shopping
